@@ -1,0 +1,46 @@
+{
+  "portfolios": [
+    {
+      "id": 1,
+      "title": "Residência Térrea — 4,5 kWp",
+      "description": "Sistema residencial composto por 10 módulos de 450 Wp com inversor monofásico. Redução média de 80% na fatura de energia.",
+      "imageSrc": "/images/portfolio/residencia-4.5kwp.png"
+    },
+    {
+      "id": 2,
+      "title": "Casa Sobrado — 5,5 kWp",
+      "description": "Instalação em telhado de cerâmica com estrutura reforçada e monitoramento via app. Sistema com 12 módulos monocristalinos.",
+      "imageSrc": "/images/portfolio/sobrado-5.5kwp.png"
+    },
+    {
+      "id": 3,
+      "title": "Residência Compacta — 3,2 kWp",
+      "description": "Projeto compacto ideal para residências com baixo consumo. Utilização de microinversores para maximizar produção.",
+      "imageSrc": "/images/portfolio/compacta-3.2kwp.png"
+    },
+    {
+      "id": 4,
+      "title": "Pequeno Comércio — 7 kWp",
+      "description": "Instalação para uma pequena loja de bairro visando reduzir custos operacionais. Sistema trifásico com 16 módulos.",
+      "imageSrc": "/images/portfolio/comercio-7kwp.png"
+    },
+    {
+      "id": 5,
+      "title": "Residência de Campo — 4 kWp",
+      "description": "Sistema residencial para casa de campo com estrutura metálica adaptada e proteção extra contra intempéries.",
+      "imageSrc": "/images/portfolio/campo-4kwp.png"
+    },
+    {
+      "id": 6,
+      "title": "Apartamento Cobertura — 5 kWp",
+      "description": "Instalação em área privativa de cobertura com análise estrutural e otimização de inclinação para máximo rendimento.",
+      "imageSrc": "/images/portfolio/cobertura-5kwp.png"
+    },
+    {
+      "id": 7,
+      "title": "Residência Geminada — 3,8 kWp",
+      "description": "Sistema com 8 módulos de alta eficiência e inversor com conectividade Wi-Fi. Instalação rápida e de baixo impacto visual.",
+      "imageSrc": "/images/portfolio/geminada-3.8kwp.png"
+    }
+  ]
+}
