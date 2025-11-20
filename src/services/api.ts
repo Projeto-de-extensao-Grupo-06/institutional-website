@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://sua-api.com",
-  withCredentials: true // caso você use cookies HTTP-Only
+  baseURL: "http://localhost:3000",
+  withCredentials: true 
 });
 
 export default api;
