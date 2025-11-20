@@ -1,5 +1,5 @@
 import styles from "../styles/Hero.module.css";
-import type { HeroProps } from "../types/properties/HeroProps";
+import type HeroProps from "../interfaces/properties/HeroProps";
 
 export default function Hero({subtitle, imageSrc}: HeroProps) {
   return (
