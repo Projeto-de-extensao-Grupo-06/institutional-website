@@ -1,5 +1,5 @@
 import styles from '../styles/Header.module.css';
-import type { HeaderProps } from '../types/HeaderProps';
+import type { HeaderProps } from '../types/properties/HeaderProps';
 
 export default function Header({logoSrc}: HeaderProps) {
   return (

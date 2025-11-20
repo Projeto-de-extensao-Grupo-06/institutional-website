@@ -1,6 +1,7 @@
 import styles from "../styles/Hero.module.css";
+import type { HeroProps } from "../types/properties/HeroProps";
 
-export default function Hero() {
+export default function Hero({subtitle, imageSrc}: HeroProps) {
   return (
     <main className={styles.main}>
         <div className={styles.content}>
@@ -8,10 +9,7 @@ export default function Hero() {
             Energia <span className={styles.highlight}>limpa</span> para um<br />
             futuro <span className={styles.highlight}>sustentável</span>
           </h1>
-          <p className={styles.subtitle}>
-            Economize, valorize seu imóvel e contribua para um mundo<br />
-            mais sustentável com a Solarize.
-          </p>
+          <p className={styles.subtitle}>{subtitle}</p>
           <div className={styles.buttons}>
             <button className={styles.primaryButton}>
               Descubra como funciona →
@@ -21,7 +19,7 @@ export default function Hero() {
         </div>
         <div className={styles.imageContainer}>
           <img 
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80" 
+            src={imageSrc}
             alt="Painéis solares ao pôr do sol" 
             className={styles.heroImage}
           />

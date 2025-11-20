@@ -7,7 +7,9 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <Header logoSrc={logo} />
-            <Hero />
+            <Hero 
+                subtitle="Economize, valorize seu imóvel e contribua para um mundo mais sustentável com a Solarize."
+                imageSrc="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80"/>
         </div>
     );
 }
