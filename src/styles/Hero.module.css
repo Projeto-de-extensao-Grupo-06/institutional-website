@@ -1,0 +1,118 @@
+.main {
+  display: flex;
+  align-items: center;
+  padding: 4rem 4rem 2rem 4rem;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #FF8C00;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryButton {
+  background: #0d3d0d;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primaryButton:hover {
+  background: #0a2f0a;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondaryButton:hover {
+  border-color: #FF8C00;
+  color: #FF8C00;
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+    padding: 3rem 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .nav {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
