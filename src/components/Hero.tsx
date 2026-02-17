@@ -1,5 +1,6 @@
 import styles from "../styles/Hero.module.css";
 import type HeroProps from "../interfaces/properties/HeroProps";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Hero({subtitle, imageSrc}: HeroProps) {
   return (
@@ -12,7 +13,7 @@ export default function Hero({subtitle, imageSrc}: HeroProps) {
           <p className={styles.subtitle}>{subtitle}</p>
           <div className={styles.buttons}>
             <button className={styles.primaryButton}>
-              Descubra como funciona →
+              Descubra como funciona  <FaArrowRight/>
             </button>
             <button className={styles.secondaryButton}>Contato</button>
           </div>

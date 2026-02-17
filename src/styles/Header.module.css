@@ -6,9 +6,16 @@
   background: white;
 }
 
-.logo img {
-  height: 40px;
+.logo {
+  height: 64px;
 }
+ 
+ .logo img {
+  height: 100%;
+  width: auto;
+  transform: scale(2.1);
+  transform-origin: left center;
+ }
 
 .nav {
   display: flex;
@@ -61,6 +68,11 @@
 @media (max-width: 768px) {
   .header {
     flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+  }
+
+  .logo {
+  height: 30px;
   }
 
   .nav {
@@ -68,20 +80,5 @@
     width: 100%;
     margin-top: 1rem;
     justify-content: flex-start;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main {
-    flex-direction: column;
-    padding: 3rem 2rem;
   }
 }

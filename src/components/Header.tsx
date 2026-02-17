@@ -5,7 +5,7 @@ export default function Header({logoSrc}: HeaderProps) {
   return (
     <header className={styles.header}>
         <div className={styles.logo}>
-          <img src={logoSrc} alt="Logo da Solarize" />
+          <img src={logoSrc} alt="Logo da SolarWay" />
         </div>
         <nav className={styles.nav}>
           <a href="#inicio" className={`${styles.navLink} ${styles.active}`}>Início</a>
