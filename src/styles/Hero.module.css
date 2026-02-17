@@ -20,7 +20,7 @@
 }
 
 .highlight {
-  color: #FF8C00;
+  color: #ff7300;
 }
 
 .subtitle {
@@ -65,8 +65,8 @@
 }
 
 .secondaryButton:hover {
-  border-color: #FF8C00;
-  color: #FF8C00;
+  border-color: #ff7300;
+  color: #ff7300;
 }
 
 .imageContainer {
@@ -90,24 +90,9 @@
   .title {
     font-size: 2.5rem;
   }
-
-  .nav {
-    gap: 1.5rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .header {
-    flex-wrap: wrap;
-  }
-
-  .nav {
-    order: 3;
-    width: 100%;
-    margin-top: 1rem;
-    justify-content: flex-start;
-  }
-
   .title {
     font-size: 2rem;
   }
