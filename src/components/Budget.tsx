@@ -52,6 +52,38 @@ export default function Budget() {
         console.log(budgetResult);
     }, [budgetResult]);
 
+    const cepMask = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const cep = e.target.value
+            .replace(/\D/g, '')
+            .slice(0, 8)
+            .replace(/(\d{5})(\d)/, '$1-$2');
+
+        const handleChange = () => {
+            setZipCode(cep);
+        }
+
+        handleChange();
+    }
+
+    const phoneMask = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const formatPhone = (value: string) => {
+            const numbers = value.replace(/\D/g, '').slice(0, 11);
+
+            if (numbers.length <= 10) {
+                return numbers
+                    .replace(/(\d{2})(\d)/, '($1) $2')
+                    .replace(/(\d{4})(\d)/, '$1-$2');
+            }
+
+            return numbers
+                .replace(/(\d{2})(\d)/, '($1) $2')
+                .replace(/(\d{5})(\d)/, '$1-$2');
+        };
+
+        const formattedPhone = formatPhone(e.target.value);
+        setPhone(formattedPhone);
+    }
+
     return (
         <section className={styles.container}>
             {!budgetResult &&
@@ -96,11 +128,11 @@ export default function Budget() {
                             </div>
                             <div className={styles.field}>
                                 <label htmlFor="telefone">Telefone</label>
-                                <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" required value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" required value={phone} onChange={phoneMask} />
                             </div>
                             <div className={styles.field}>
                                 <label htmlFor="cep">CEP</label>
-                                <input id="cep" name="cep" type="text" placeholder="00000-000" required value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
+                                <input id="cep" name="cep" type="text" placeholder="00000-000" required value={zipCode} onChange={cepMask} />
                             </div>
                             <div className={styles.field}>
                                 <label htmlFor="consumo">Consumo médio da conta de luz</label>
@@ -129,21 +161,25 @@ export default function Budget() {
                             <div className={styles.resultContainer}>
                                 <div className={styles.resultBox}>
                                     <h2 className={styles.resultTitle}>Potencia Estimada</h2>
-                                    <p className={styles.resultValue}>R$ {budgetResult.kwp.toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
+                                    <p className={styles.resultValue}>{budgetResult.kwp.toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
                                 </div>
                                 <div className={styles.resultBox}>
                                     <h2 className={styles.resultTitle}>Investimento Estimado</h2>
-                                    <p className={styles.resultValue}>R$ {budgetResult.cost.toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
+                                    <p className={styles.resultValue}>{budgetResult.cost.toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
                                 </div>
                                 <div className={styles.resultBox}>
-                                    <h2 className={styles.resultTitle}>Investimento Estimado</h2>
-                                    <p className={styles.resultValue}>R$ {budgetResult.cost.toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
+                                    <h2 className={styles.resultTitle}>Economia Estimada</h2>
+                                    <p className={styles.resultValue}>{(budgetResult.cost / (budgetResult.paybackYears * 12)).toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
                                 </div>
                                 <div className={styles.resultBox}>
-                                    <h2 className={styles.resultTitle}>Investimento Estimado</h2>
-                                    <p className={styles.resultValue}>R$ {budgetResult.cost.toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
+                                    <h2 className={styles.resultTitle}>Retorno do Investimento</h2>
+                                    <p className={styles.resultValue}>{budgetResult.paybackYears.toFixed(1)} anos</p>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div className={styles.contactWrapper}>
+                            <button className={styles.contactMe}>Entre em contato comigo!</button>
                         </div>
                     </div>
                 </div>
