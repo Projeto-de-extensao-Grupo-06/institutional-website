@@ -20,4 +20,5 @@ export interface PreBudgetResponse {
     cost: number;
     paybackYears: number;
     message: string;
+    projectId: number;
 }

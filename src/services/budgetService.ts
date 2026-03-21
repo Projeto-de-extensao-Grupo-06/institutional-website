@@ -10,4 +10,11 @@ export default class BudgetService {
 
         return req.data;
     }
+    
+    async awaitContact(projectId: number): Promise<void> {
+        const req = await api.post(`/projects/awaiting-contact/${projectId}`, {});
+        if (req.status !== 204) {
+            throw new Error('Erro ao solicitar contato');
+        }
+    }
 }

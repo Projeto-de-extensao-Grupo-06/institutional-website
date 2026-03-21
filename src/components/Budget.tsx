@@ -19,6 +19,8 @@ export default function Budget() {
 
     const [budgetResult, setBudgetResult] = useState<PreBudgetResponse | null>(null);
 
+    const [awaitingContact, setAwaitingContact] = useState(false);
+
     async function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
 
@@ -82,6 +84,21 @@ export default function Budget() {
 
         const formattedPhone = formatPhone(e.target.value);
         setPhone(formattedPhone);
+    }
+
+
+    function handleContact() {
+        const service = async () => {
+            if (!budgetResult) return;
+            try {
+                await budgetService.awaitContact(budgetResult.projectId);
+                setAwaitingContact(true);
+            } catch (error) {
+                alert('Erro ao solicitar contato. Por favor, tente novamente mais tarde.');
+            }
+        }
+
+        service();
     }
 
     return (
@@ -161,7 +178,7 @@ export default function Budget() {
                             <div className={styles.resultContainer}>
                                 <div className={styles.resultBox}>
                                     <h2 className={styles.resultTitle}>Potencia Estimada</h2>
-                                    <p className={styles.resultValue}>{budgetResult.kwp.toLocaleString("pt-bt", { style: "currency", currency: "BRL" })}</p>
+                                    <p className={styles.resultValue}>{budgetResult.kwp.toFixed(2) + " kWp"}</p>
                                 </div>
                                 <div className={styles.resultBox}>
                                     <h2 className={styles.resultTitle}>Investimento Estimado</h2>
@@ -177,9 +194,11 @@ export default function Budget() {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className={styles.contactWrapper}>
-                            <button className={styles.contactMe}>Entre em contato comigo!</button>
+                            <button disabled={awaitingContact} className={styles.contactMe} onClick={handleContact}>
+                                {awaitingContact ? 'Contato solicitado!' : 'Entre em contato comigo!'}
+                            </button>
                         </div>
                     </div>
                 </div>
