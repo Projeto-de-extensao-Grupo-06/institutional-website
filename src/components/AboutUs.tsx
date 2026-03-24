@@ -1,4 +1,5 @@
 import styles from '../styles/AboutUs.module.css';
+import painelAoPorDoSol from '../assets/Painel solar ao pôr do sol.png';
 
 export default function AboutUs() {
     return (
@@ -12,7 +13,7 @@ export default function AboutUs() {
                     </h2>
 
                     <div className={styles.image}>
-                        <img src="src/assets/Painel solar ao pôr do sol.png" alt="No que acreditamos" />
+                        <img src={painelAoPorDoSol} alt="No que acreditamos" />
                     </div>
 
                 </div>
