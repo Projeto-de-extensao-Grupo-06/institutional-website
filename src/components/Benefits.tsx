@@ -1,5 +1,6 @@
 import { FaDollarSign, FaHome, FaTree } from 'react-icons/fa';
 import styles from '../styles/Benefits.module.css';
+import imgBeneficios from '../assets/imgBeneficios.png';
 
 export default function Benefits() {
     return (
@@ -51,7 +52,7 @@ export default function Benefits() {
                 </div>
 
                 <div className={styles.image} >
-                    <img src="/src/assets/imgBeneficios.png" alt="Imagem de Benefícios" />
+                    <img src={imgBeneficios} alt="Imagem de Benefícios" />
                 </div>
 
             </main>
