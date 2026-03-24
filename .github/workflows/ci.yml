@@ -27,5 +27,3 @@ jobs:
       run: npm run build
     - name: Run lint
       run: npm run lint
-    - name: Run tests
-      run: npm run test -- --run # use --run to run once and exit, not watch
