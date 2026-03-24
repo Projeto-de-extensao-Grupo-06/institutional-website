@@ -93,7 +93,7 @@ export default function Budget() {
             try {
                 await budgetService.awaitContact(budgetResult.projectId);
                 setAwaitingContact(true);
-            } catch (error) {
+            } catch {
                 alert('Erro ao solicitar contato. Por favor, tente novamente mais tarde.');
             }
         }
