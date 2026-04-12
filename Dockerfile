@@ -5,6 +5,10 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+
+ARG VITE_BASE=/institucional
+ENV VITE_BASE=${VITE_BASE}
+
 RUN npm run build
 
 FROM nginx:alpine

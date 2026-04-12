@@ -4,6 +4,12 @@ server {
     gzip on;
     gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
 
+    location /institucional {
+        alias /usr/share/nginx/html;
+        index index.html;
+        try_files $uri $uri/ /institucional/index.html;
+    }
+
     location / {
         root /usr/share/nginx/html;
         index index.html;
