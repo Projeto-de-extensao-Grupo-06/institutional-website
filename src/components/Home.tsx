@@ -10,6 +10,7 @@ import Questions from "./Questions";
 import styles from '../styles/Home.module.css';
 import logo from '../assets/SolarWayLogo.png';
 import Footer from "./Footer";
+import heroImage from '../assets/Painel solar ao pôr do sol.png';
 
 export default function Home() {
     return (
@@ -17,7 +18,7 @@ export default function Home() {
             <Header logoSrc={logo} />
             <Hero 
                 subtitle="Economize, valorize seu imóvel e contribua para um mundo mais sustentável com a SolarWay."
-                imageSrc="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80"/>
+                imageSrc={heroImage}/>
             <Benefits />
             <Believe />
             <Somethings />
