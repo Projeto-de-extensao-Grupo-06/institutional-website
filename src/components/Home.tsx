@@ -10,7 +10,7 @@ import Questions from "./Questions";
 import styles from '../styles/Home.module.css';
 import logo from '../assets/SolarWayLogo.png';
 import Footer from "./Footer";
-import heroImage from '../assets/Painel solar ao pôr do sol.png';
+import heroImage from '../assets/login-background-quality.jpg';
 
 export default function Home() {
     return (
