@@ -4,6 +4,8 @@ export interface PreBudgetRequest {
     phone: string;
     email: string;
     monthlyBill: string;
+    propertyType: string;
+    roofType: string;
     address: {
         postalCode: string;
         streetName: string;
