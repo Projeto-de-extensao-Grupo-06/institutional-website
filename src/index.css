@@ -14,6 +14,30 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Theme tokens - SolarWay design system */
+  --color-primary: #0D3D0D;       /* Verde original forte e vívido */
+  --color-primary-hover: #082808; /* Verde original hover */
+  --color-accent: #FF7A00;        /* Laranja solar vibrante */
+  --color-accent-hover: #E06B00;
+  --color-text-dark: #1A1A1A;
+  --color-text-light: #FFFFFF;
+  --color-text-muted: #555555;
+  --color-bg-light: #F4F7F5;      /* Fundo suave verde-cinza */
+  --color-bg-white: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-success: #10B981;       /* Verde esmeralda elegante */
+  --color-danger: #EF4444;        /* Vermelho suave */
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+  --shadow-xxl: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 * {

@@ -1,88 +1,105 @@
 .container { 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
-  min-height: 100vh;
-  padding: 4rem ;
-  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+  padding: 6rem 2rem;
+  background: var(--color-bg-light);
 } 
- 
+  
 .main {  
   max-width: 1400px; 
   margin: 0 auto; 
-}
-
+} 
+ 
 .title {
   font-size: 3rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-weight: 800;
+  color: var(--color-primary);
   text-align: center;
-  margin-bottom: 3rem;
-}
-
+  margin-bottom: 4rem;
+  letter-spacing: -0.02em;
+} 
+ 
 .highlight {
-  color: #ff7300;
-}
-
+  color: var(--color-accent);
+} 
+ 
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-}
-
+} 
+ 
 .projectCard {
-  background: #FDE6DF;
-  border-radius: 16px;
+  background: var(--color-bg-white);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: all var(--transition-normal);
+} 
 
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(27, 78, 62, 0.1);
+}
+ 
 .projectImage {
   width: 100%;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
-}
+  transition: transform var(--transition-normal);
+} 
 
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+ 
 .projectContent {
-  padding: 1.5rem;
-}
-
+  padding: 2rem;
+} 
+ 
 .projectTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
   margin-bottom: 0.75rem;
-}
-
+} 
+ 
 .projectDescription {
   font-size: 1rem;
-  color: #555;
+  color: var(--color-text-muted);
   line-height: 1.6;
-}
-
+} 
+ 
 @media (max-width: 1024px) {
   .projectsGrid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
+    gap: 2rem;
+  } 
+ 
   .container {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
-}
-
+ 
+  .title {
+    font-size: 2.5rem;
+  }
+} 
+ 
 @media (max-width: 768px) {
   .projectsGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
+  } 
+ 
   .container {
-    padding: 3rem 1.5rem;
-  }
-
+    padding: 4rem 1.5rem;
+  } 
+ 
   .title {
     font-size: 2rem;
-  }
-
+  } 
+ 
   .projectImage {
     height: 200px;
-  }
+  } 
 }

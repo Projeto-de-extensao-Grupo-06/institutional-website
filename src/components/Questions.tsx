@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 import styles from '../styles/Questions.module.css';
 
 interface FaqItem {
@@ -43,15 +43,15 @@ export default function Questions() {
 
         <div className={styles.faqList}>
           {faqData.map((item, index) => (
-            <div key={index} className={styles.faqItem}>
+            <div key={index} className={`${styles.faqItem} ${openIndex === index ? styles.faqItemOpen : ''}`}>
               <button
                 className={styles.question}
                 onClick={() => toggleFaq(index)}
                 aria-expanded={openIndex === index}
               >
                 <span>{item.question}</span>
-                <span className={styles.icon}>
-                  {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+                <span className={`${styles.icon} ${openIndex === index ? styles.rotate : ''}`}>
+                  <FaChevronDown />
                 </span>
               </button>
               {openIndex === index && (
