@@ -16,10 +16,14 @@ export default function Budget() {
     const [phone, setPhone] = useState('');
     const [zipCode, setZipCode] = useState('');
     const [consumption, setConsumption] = useState('');
+    const [propertyType, setPropertyType] = useState('');
+    const [roofType, setRoofType] = useState('');
 
     const [budgetResult, setBudgetResult] = useState<PreBudgetResponse | null>(null);
 
     const [awaitingContact, setAwaitingContact] = useState(false);
+
+
 
     async function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
@@ -37,6 +41,8 @@ export default function Budget() {
             email,
             phone,
             monthlyBill: consumption,
+            propertyType,
+            roofType,
             address: {
                 postalCode: zipCode,
                 streetName: address.logradouro,
@@ -154,6 +160,25 @@ export default function Budget() {
                             <div className={styles.field}>
                                 <label htmlFor="consumo">Consumo médio da conta de luz</label>
                                 <input id="consumo" name="consumo" type="number" placeholder="Ex: 350,00" value={consumption} onChange={(e) => setConsumption(e.target.value)} />
+                            </div>
+                            <div className={styles.field}>
+                                <label htmlFor="propertyType">Tipo de Imóvel</label>
+                                <select id="propertyType" value={propertyType} onChange={(e) => setPropertyType(e.target.value)} required>
+                                    <option value="">Selecione o tipo de imóvel</option>
+                                    <option value="PROPERTY_TYPE_CASA_TERREA">Casa Térrea</option>
+                                    <option value="PROPERTY_TYPE_SOBRADO">Sobrado</option>
+                                    <option value="PROPERTY_TYPE_PREDIO">Prédio / Comercial</option>
+                                </select>
+                            </div>
+                            <div className={styles.field}>
+                                <label htmlFor="roofType">Tipo de Telhado</label>
+                                <select id="roofType" value={roofType} onChange={(e) => setRoofType(e.target.value)} required>
+                                    <option value="">Selecione o tipo de telhado</option>
+                                    <option value="ROOF_TYPE_METALICO">Metálico</option>
+                                    <option value="ROOF_TYPE_CERAMICO">Cerâmico</option>
+                                    <option value="ROOF_TYPE_FIBROCIMENTO">Fibrocimento</option>
+                                    <option value="ROOF_TYPE_LAJE">Laje</option>
+                                </select>
                             </div>
 
                             <button className={styles.submit} type="submit">Pedir orçamento</button>
