@@ -13,7 +13,12 @@ export default function Header({logoSrc}: HeaderProps) {
           <a href="#sobre" className={styles.navLink}>Sobre Nós</a>
           <a href="#projetos" className={styles.navLink}>Projetos</a>
         </nav>
-        <button className={styles.ctaButton}>Faça seu orçamento já</button>
+        <button 
+          className={styles.ctaButton}
+          onClick={() => document.getElementById('orcamento')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          Faça seu orçamento já
+        </button>
     </header>
   );
 }

@@ -5,7 +5,7 @@ import { BsFileBarGraphFill } from 'react-icons/bs';
 
 export default function Process() { 
         return (
-        <div className={styles.container}>
+        <div id="como-funciona" className={styles.container}>
             <main className={styles.main}>
                 <div className={styles.title}> Como funciona o nosso processo</div>
                
