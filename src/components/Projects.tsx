@@ -3,36 +3,60 @@ import type PortfolioItem from '../interfaces/PortfolioItem';
 import { getPortfolios } from '../services/portfolioService';
 import styles from '../styles/Projects.module.css';
 
+// Import local assets so Vite manages, hashes, and compiles them
+import projeto1 from '../assets/projeto1.avif';
+import projeto2 from '../assets/projeto2.jpeg';
+import projeto3 from '../assets/projeto3.jpg';
+import projeto4 from '../assets/projeto4.jpg';
+import projeto5 from '../assets/projeto5.jpeg';
+import projeto6 from '../assets/projeto6.webp';
+
+// Map API imageSrc paths to the compiled assets
+const ASSET_MAP: Record<string, string> = {
+  '/projeto1.avif': projeto1,
+  '/projeto2.jpeg': projeto2,
+  '/projeto3.jpg': projeto3,
+  '/projeto4.jpg': projeto4,
+  '/projeto5.jpeg': projeto5,
+  '/projeto6.webp': projeto6,
+  'projeto1.avif': projeto1,
+  'projeto2.jpeg': projeto2,
+  'projeto3.jpg': projeto3,
+  'projeto4.jpg': projeto4,
+  'projeto5.jpeg': projeto5,
+  'projeto6.webp': projeto6,
+};
+
 const FALLBACK_PROJECTS: PortfolioItem[] = [
   {
     title: "Residência Térrea — 4,5 kWp",
     description: "Sistema residencial composto por 10 módulos de 450 Wp com inversor monofásico. Redução média de 80% na fatura de energia.",
-    imageSrc: `${import.meta.env.BASE_URL}projeto1.avif`
+    imageSrc: projeto1
   },
   {
     title: "Casa Sobrado — 5,5 kWp",
     description: "Instalação em telhado de cerâmica com estrutura reforçada e monitoramento via app. Sistema com 12 módulos monocristalinos.",
-    imageSrc: `${import.meta.env.BASE_URL}projeto2.jpeg`
+    imageSrc: projeto2
   },
   {
     title: "Residência Compacta — 3,2 kWp",
     description: "Projeto compacto ideal para residências com baixo consumo. Utilização de microinversores para maximizar produção.",
-    imageSrc: `${import.meta.env.BASE_URL}projeto3.jpg`
+    imageSrc: projeto3
   },
   {
     title: "Pequeno Comércio — 7 kWp",
     description: "Instalação para uma pequena loja de bairro visando reduzir custos operacionais. Sistema trifásico com 16 módulos.",
-    imageSrc: `${import.meta.env.BASE_URL}projeto4.jpg`
+    imageSrc: projeto4
   },
   {
     title: "Residência de Campo — 4 kWp",
     description: "Sistema residencial para casa de campo com estrutura metálica adaptada e proteção extra contra intempéries.",
-    imageSrc: `${import.meta.env.BASE_URL}projeto5.jpeg`
+    imageSrc: projeto5
   },
   {
     title: "Apartamento Cobertura — 5 kWp",
     description: "Instalação em área privativa de cobertura com análise estrutural e otimização de inclinação para máximo rendimento.",
-    imageSrc: `${import.meta.env.BASE_URL}projeto6.webp`
+    imageSrc: projeto6
   }
 ];
 
@@ -64,9 +88,9 @@ export default function Projects() {
                 <div className={styles.projectsGrid}>
                     {projects.map((project, idx) => {
                         const isExternal = project.imageSrc.startsWith('http') || project.imageSrc.startsWith('data:');
-                        const imageSrc = isExternal || project.imageSrc.startsWith(import.meta.env.BASE_URL)
+                        const imageSrc = isExternal
                             ? project.imageSrc
-                            : `${import.meta.env.BASE_URL}${project.imageSrc.replace(/^\//, '')}`;
+                            : (ASSET_MAP[project.imageSrc] || `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${project.imageSrc.replace(/^\//, '')}`);
 
                         return (
                             <div key={`${project.title}-${idx}`} className={styles.projectCard}>
